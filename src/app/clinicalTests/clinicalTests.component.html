@@ -1,0 +1,43 @@
+<ul class="clinicalTests">
+  <mat-expansion-panel matExpansionPanel #panel [expanded]="true" class="panel" *ngFor="let clinicalTest of clinicalTests">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{clinicalTest.description}}
+      </mat-panel-title>
+      <mat-panel-description>
+        Modifier le test
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <app-clinicalTest-detail [clinicalTest]="clinicalTest"></app-clinicalTest-detail>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Choisir une catégorie de test</mat-label>
+        <mat-select matSelect #category value={{clinicalTest.category}}>
+          <mat-option *ngFor="let clinicalTestsCategory of clinicalTestsCategories">Tête</mat-option>
+          <mat-option value="Autre">Autre</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field hintLabel="Max 100 caractères" appearance="fill">
+        <mat-label>Entrer une description du test</mat-label>
+        <input matInput #description value={{clinicalTest.description}} maxlength="100">
+        <mat-hint align="end">{{description.value?.length || 0}}/100</mat-hint>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field hintLabel="Max 100 caractères" appearance="fill">
+        <mat-label>Entrer le résultat du test</mat-label>
+        <input matInput #result maxlength="100" value={{clinicalTest.result}}>
+        <mat-hint align="end">{{result.value?.length || 0}}/100</mat-hint>
+      </mat-form-field>
+    </div>
+    <div>
+      <button mat-raised-button (click) = "onOk(clinicalTest,category.value,description.value,result.value);panel.expanded=false">Valider</button>
+    </div>
+  </mat-expansion-panel>
+  <div>
+    <button mat-raised-button (click) = onAdd()> Ajouter un autre test</button>
+  </div>
+</ul>
+
