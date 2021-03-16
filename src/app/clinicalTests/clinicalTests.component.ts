@@ -14,12 +14,14 @@ export class ClinicalTestsComponent implements OnInit {
 
   clinicalTestsCategories: ClinicalTestsCategory[] = [];
 
-  selectedClinicalTest?: ClinicalTest;
-
   onOk(clinicalTest: ClinicalTest,category : string, description : string, result : string): void {
     clinicalTest.category=category;
     clinicalTest.description=description;
     clinicalTest.result=result;
+  }
+
+  onDelete(clinicalTest: ClinicalTest): void {
+    this.clinicalTests = this.clinicalTests.filter(obj => obj !== clinicalTest);
   }
 
   onAdd(): void{

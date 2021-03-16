@@ -37,7 +37,8 @@
       </mat-form-field>
     </div>
     <div>
-      <button mat-raised-button (click) = "onOk(clinicalTest,category.value,description.value,result.value);panel.expanded=false">Valider</button>
+      <span><button mat-raised-button (click) = "onDelete(clinicalTest)">Supprimer</button></span>
+      <span><button mat-raised-button (click) = "onOk(clinicalTest,category.value,description.value,result.value);panel.expanded=false">Valider</button></span>
     </div>
   </mat-expansion-panel>
   <div>
