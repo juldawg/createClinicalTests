@@ -1,8 +1,12 @@
 {
   "clinicalTestsCategories": [
-    "Tête",
-    "Membre supérieur",
-    "Rachis",
-    "Membre inférieur"
+    {"category" : "Tête",
+      "subcategory": []},
+    {"category" : "Membre supérieur",
+      "subcategory": [{"category" : "Épaule", "subcategory": []},{"category" : "Coude", "subcategory": []},{"category" : "Avant-bras", "subcategory": []},{"category" : "Poignet", "subcategory": []},{"category" : "Main", "subcategory": []}]},
+    {"category" : "Rachis",
+      "subcategory": [{"category" : "Cervical", "subcategory": []},{"category" : "Thoracique", "subcategory": []},{"category" : "Lombaire", "subcategory": []}]},
+    {"category" : "Membre inférieur",
+      "subcategory": [{"category" : "Bassin", "subcategory": []},{"category" : "Hanche", "subcategory": []},{"category" : "Genou", "subcategory": []},{"category" : "Cheville", "subcategory": []},{"category" : "Pied", "subcategory": []}]}
   ]
 }

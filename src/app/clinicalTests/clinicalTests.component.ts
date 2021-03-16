@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ClinicalTest } from '../clinicalTest';
+import { ClinicalTestsCategory } from '../clinicalTestsCategory';
 import { ClinicalTestService } from '../clinicalTest.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class ClinicalTestsComponent implements OnInit {
 
   clinicalTests: ClinicalTest[] = [];
 
-  clinicalTestsCategories: String[] = [];
+  clinicalTestsCategories: ClinicalTestsCategory[] = [];
 
   selectedClinicalTest?: ClinicalTest;
 

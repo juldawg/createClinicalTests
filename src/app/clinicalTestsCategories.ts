@@ -1,3 +1,5 @@
+import {ClinicalTestsCategory} from './clinicalTestsCategory';
+
 export class MockAPIClinicalTestsCategoriesList {
-  clinicalTestsCategories: string[] = [];
+  clinicalTestsCategories: ClinicalTestsCategory[] = [];
 }

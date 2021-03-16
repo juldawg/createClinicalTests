@@ -13,8 +13,12 @@
       <mat-form-field appearance="fill">
         <mat-label>Choisir une catégorie de test</mat-label>
         <mat-select matSelect #category value={{clinicalTest.category}}>
-          <mat-option *ngFor="let clinicalTestsCategory of clinicalTestsCategories">Tête</mat-option>
-          <mat-option value="Autre">Autre</mat-option>
+          <mat-optgroup *ngFor="let clinicalTestsCategory of clinicalTestsCategories" [label]="clinicalTestsCategory.category">
+            <mat-option *ngFor="let clinicalTestsSubcategory of clinicalTestsCategory.subcategory" [value]="clinicalTestsSubcategory.category">
+              {{clinicalTestsSubcategory.category}}
+            </mat-option>
+          </mat-optgroup>
+          <mat-option *ngFor="let clinicalTestsCategory of clinicalTestsCategories" value={{clinicalTestsCategory}}>{{clinicalTestsCategory}}</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
